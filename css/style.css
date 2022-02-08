@@ -1,7 +1,101 @@
-body {font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #FFFFFF; background-color: #000000; font-size: 16px; font-weight: 400;}
+@font-face {
+  font-family: Swift;
+  src: url(font/swift.woff2);
+}
+@font-face {
+  font-family: Swift2;
+  src: url(font/swift2.woff2);
+}
+
+body {font-family: Swift2, "Helvetica Neue", Helvetica, sans-serif; color: #FFFFFF; background-color: #000000; font-size: 16px; font-weight: 400; margin-left:1.5em;margin-right:1.5em;}
 
 h1 { font-size: 24px; font-weight: 700;}
 h2 { font-size: 22px; font-weight: 500;}
+h5 { font-family: Swift; font-size:px;}
+
+header {margin-bottom:2em;}
+.navbar-collapse {
+    flex-grow: 0.1;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.d-lg-none img, .d-lg-block img {
+  max-width:10em;
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+}
+a.nav-link {
+  font-family: Swift!important;
+  color:white;
+  text-align: center;
+}
+
+button.navbar-toggler,button.navbar-toggler:hover {
+  background-image:none;
+}
+.navbar-toggler:focus {
+    box-shadow:none;
+}
+
+
+button.navbar-toggler{
+  display:flex;
+  flex-direction:column;
+  width:60px;
+  cursor:pointer;
+}
+
+button.navbar-toggler span{
+  background: #fff;
+  border-radius:10px;
+  height:4px;
+  margin:4px 0;
+  transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+}
+
+span.navbar-toggler-icon1{
+  width:50%;
+}
+
+span.navbar-toggler-icon2{
+  width:100%;
+}
+
+span.navbar-toggler-icon3{
+  width:50%;
+  margin-left:50%!important;
+}
+
+
+button.navbar-toggler[aria-expanded="true"] span.navbar-toggler-icon1{
+  transform-origin:bottom;
+  transform:rotatez(45deg) translate(5px,2px)
+}
+
+
+button.navbar-toggler[aria-expanded="true"] span.navbar-toggler-icon2{
+
+  transform-origin:top;
+  transform:rotatez(-45deg)
+}
+
+
+button.navbar-toggler[aria-expanded="true"] span.navbar-toggler-icon3{
+
+  transform-origin:bottom;
+  width:50%;
+  transform: translate(-2px,-7px) rotatez(45deg);
+
+}
+
+
 
 .small {
     font-size: 12px;
@@ -26,10 +120,11 @@ h2 { font-size: 22px; font-weight: 500;}
 a {
   color: #FFFFFF;
   text-decoration: none;
+  word-break: break-word;
 }
 
 a:hover {
-  color: #C0C0C0;
+  color: blue;
 }
 
 .clickable {
@@ -37,13 +132,13 @@ a:hover {
 }
 
 .clickable:hover {
-    color: #C0C0C0;
+    color: #blue;
 }
 
 button {
-  background-color: #283747;
+  background-image: linear-gradient(blue, lightblue);
   border: none;
-  border-radius: 2px;
+  border-radius: 15px;
   color: white;
   padding: 5px 20px;
   text-align: center;
@@ -55,7 +150,7 @@ button {
 }
 
 button:hover {
-  background-color: #008000;
+  background-image: linear-gradient(grey, white);
 }
 
 button[disabled] {
@@ -76,4 +171,23 @@ input {
   color: #FFFFFF;
   border:1px solid;
   max-width: 100%;
+}
+
+footer img.swiftlogo{
+  width:40%;
+}
+footer a.btn{
+  width:10%;
+}
+footer a.btn img {
+  width:100%;
+}
+
+@media (max-width: 992px){
+  footer img.swiftlogo{
+    width:90%;
+  }
+  footer a.btn{
+    width:15%;
+  }
 }
